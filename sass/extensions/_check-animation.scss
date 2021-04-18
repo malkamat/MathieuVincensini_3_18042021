@@ -1,0 +1,29 @@
+%check-animation {
+/* keyframe de la translation de la div qui contient l'icone */
+    @keyframes translation-check {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 40%;  
+        }
+ /* keyframe de la rotation de l'icone */
+    }
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {      
+            visibility: visible; 
+            transform: rotate(360deg);
+        }
+    }
+/* animation pour le 3eme enfant de la div qui correspond à l'icone*/
+    :nth-child(3) {
+        animation: translation-check 1s both ;
+        i {
+            animation: rotate 0.7s both;
+
+        }
+    }
+}

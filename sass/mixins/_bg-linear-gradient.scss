@@ -1,0 +1,3 @@
+@mixin bg-linear-gradient ($rotation) {
+    background: linear-gradient(#{$rotation}deg,$couleur-primaire,$couleur-secondaire);
+}

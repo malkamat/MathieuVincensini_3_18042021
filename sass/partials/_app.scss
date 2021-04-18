@@ -1,0 +1,456 @@
+/* header */
+.header {
+    @extend %flex-center-items;
+    height: 100px;
+    font-size: 2.7em;
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+
+    @media screen and (max-width: 900px) {
+        font-size: 2.2em;
+    }
+
+    &__titre {
+        font-family: $Shrikhand;
+    }
+
+    &__retour {
+        position: absolute;
+        left: 30px;
+        font-size: 0.7em;
+        color: rgb(87, 87, 87);
+    }
+}
+
+/* localisation page d'accueil */
+.localisation {
+    margin-top: 6px;
+    padding: 20px 0;
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+    font-size: 1.3em;
+
+    &__texte {
+        font-family: $Roboto;
+        font-weight: normal;
+
+        &::before {
+            content: "\f3c5";
+            font-family: "Font Awesome 5 Free";
+            position: relative;
+            left: - 10px;
+            font-weight: bold;
+            color: rgb(110, 110, 110);
+        }
+    }
+}
+
+/* main */
+
+.main {
+    font-family: $Roboto
+}
+
+/* section d'infos sur le site */
+
+.info {
+    @extend %flex-center-items;
+    flex-direction: column;
+
+    /* article texte d'intro site */
+    &-explorer {
+        background-color: rgb(249, 249, 249);
+        text-align: center;
+        padding: 30px 30px;
+        width: 100%;
+
+        &__titre {
+            font-size: 2.2em;
+        }
+
+        &__texte {
+            color: gray;
+            margin: 15px 0 25px 0;
+        }
+
+        &__bouton {
+            @extend %pills;
+            @extend %effet-boutons-principaux;
+            @include bg-linear-gradient(360);
+            color: #f1f1f1;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1em;
+        }
+    }
+
+    /* article fonctionnement */
+    &-fonctionnement {
+        margin-bottom: 50px;
+        display: flex;
+        width: 100%;
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+        }
+
+
+        &__titre {
+            padding: 20px 0 20px 20px;
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        /* liste boutons fonctionnement */
+        &-liste {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 50px 0 0 100px;
+
+            @media screen and (max-width: 900px) {
+                align-items: center;
+
+            }
+
+            @media screen and (max-width: 550px) {
+                padding: 0;
+            }
+
+
+            &-item {
+                padding-left: 50px;
+
+                @media screen and (max-width: 900px) {
+                    padding-left: 0;
+                    width: 100%;
+
+                }
+
+                @media screen and (max-width: 550px) {
+                    width: 90%;
+
+                }
+
+                &__numero {
+                    @extend %numero-style;
+
+                }
+
+                &__button {
+                    @extend %pills;
+                    text-align: start;
+                    font-weight: bold;
+                    padding: 25px 80px;
+                    font-size: 0.9em;
+
+                    /* tabeau d'icones */
+                    $icons: f3cd, f0ca, f54e;
+
+                    @each $icon in $icons {
+                        &--#{$icon} {
+
+                            &::before {
+                                content: unquote("\"\\#{$icon}\"");
+                                font-family: "Font Awesome 5 Free";
+                                position: relative;
+                                left: -20px;
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        width: 70%;
+                        padding: 25px 60px;
+                    }
+
+                    @media screen and (max-width: 550px) {
+                        width: 100%;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/* section restaurants */
+.restaurants {
+    background-color: rgb(249, 249, 249);
+
+    &__titre {
+        font-size: 1.7em;
+        padding: 50px 0 20px 20px;
+        font-weight: bold;
+    }
+
+    /* grille pour les cartes des restaurants */
+    &-grille {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 320px);
+        gap: 50px;
+        justify-content: center;
+        padding-bottom: 50px;
+
+        @media screen and (max-width: 550px) {
+            grid-template-columns: 90%;
+            gap: 20px;
+            grid-template-rows: repeat(auto-fill, auto);
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        /* carte accueil */
+        &-carte {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 1px -1px 2px 2px rgb(228, 228, 228);
+            cursor: pointer;
+
+
+            &__image {
+                height: 300px;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+
+                @media screen and (max-width: 450px) {
+                    height: 180px;
+                }
+
+            }
+
+
+            /* info cartes restaurants accueil */
+            &-info {
+                border-radius: 0px 0px 20px 20px;
+                padding: 5px 0 0 5px;
+                background-color: #ffffff;
+
+                &__titre {
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+
+                &__coeur {
+                    @extend %effet-coeur;
+                    top: -28px;
+                    left: 90%;
+                    font-size: 1.3em;
+
+
+                }
+            }
+        }
+    }
+}
+
+/* footer */
+
+.footer {
+    background: rgb(61, 61, 61);
+    color: #f1f1f1;
+    padding: 20px 0 20px 20px;
+
+    &-article {
+
+        &__titre {
+            margin-bottom: 10px;
+            font-family: $Shrikhand;
+            font-size: 1.2em;
+        }
+
+        &-liste {
+
+            &__item {
+                padding-bottom: 10px;
+                font-size: 0.9em;
+                font-family: $Roboto;
+
+
+                a {
+                    text-decoration: none;
+                    color: #f1f1f1;
+                }
+
+                i {
+                    font-size: 0.9em;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+/* style des pages des restaurants */
+
+.main-carte {
+    background: rgb(248, 248, 248);
+
+}
+
+.image-top {
+    position: sticky;
+    height: 60vh;
+
+    @media screen and (max-width: 900px) {
+        height: 100%;
+    }
+
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+        @media screen and (max-width: 900px) {
+            object-fit: contain;
+        }
+    }
+}
+
+/* menu du restaurant */
+
+.carte {
+    background: rgb(248, 248, 248);
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    top: -50px;
+
+    /* header menu */
+
+    &-header {
+        padding: 20px 40px 40px 20px;
+        display: flex;
+        justify-content: space-between;
+
+        &__titre {
+            font-family: $Shrikhand;
+            font-size: 2em;
+        }
+
+        &__coeur {
+            @extend %effet-coeur;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+    }
+
+    /* layout menu */
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            padding: 0;
+            width: 90%;
+            margin: auto;
+        }
+
+    }
+
+}
+
+/* article menu */
+
+.carte-article {
+
+    &__titre {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            height: 3px;
+            top: 25px;
+            left: 0px;
+            width: 40px;
+            border-bottom: 3px solid $couleur-tertiaire;
+        }
+
+    }
+}
+
+/* article menu liste des plats */
+
+.carte-article-liste {
+
+    &__item {
+        width: 350px;
+        height: 70px;
+        display: flex;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
+        @include effet-cartes-menu(10);
+
+        &:hover {
+            cursor: pointer;
+            @extend %check-animation;
+
+        }
+    }
+}
+
+/* description et prix des cartes sur les menus */
+
+.carte-liste-item-info {
+    margin: 7px 0 0 8px;
+    width: 90%;
+    min-width: 50%;
+
+
+    &__titre {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    &__description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.1em;
+
+    }
+
+
+
+    &-prix {
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        margin: 39px 20px 0 0px;
+        font-size: 1.1em;
+        text-align: end;
+        width: 10%
+
+    }
+
+ 
+
+    &-check {
+        @extend %flex-center-items;
+        @extend %check-style-hidden;
+
+
+    }
+
+
+}

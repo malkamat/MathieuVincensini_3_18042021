@@ -1,0 +1,20 @@
+@mixin effet-cartes-menu($nbCartes) {
+/* keyframe de l'effet */
+    @keyframes translation-carte {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+        }  
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+/* boucle dans le nobre de carte pour ajouter du delay entre les apparations */
+    @for $i from 1 to $nbCartes {
+        &--#{$i} {
+            animation: translation-carte (0.3s + (0.3s *$i));
+
+        }
+    }
+}

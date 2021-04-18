@@ -1,0 +1,12 @@
+%numero-style {
+    @extend %flex-center-items;
+    font-size: 0.8em;
+    position: relative;
+    top: -43px;
+    left: -6px;
+    padding: 5px 5px;
+    border-radius: 99px;
+    width: 25px;
+    color: #f1f1f1;
+    background-color: $couleur-primaire;
+}

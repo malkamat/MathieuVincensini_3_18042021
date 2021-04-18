@@ -1,0 +1,37 @@
+%effet-coeur {
+    position: relative;
+
+    &:hover {
+        visibility: hidden;
+
+        @keyframes apparition-coeur {
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+ 
+
+        &::after {
+            @include bg-linear-gradient(280);
+            animation-name: apparition-coeur;
+            animation-duration: 1s;
+            content: "\f004";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            visibility: visible;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+
+    }
+}
