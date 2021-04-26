@@ -1,0 +1,11 @@
+@mixin boutons-principaux ($padX) {
+    @extend %pills;
+    @extend %effet-boutons-principaux;
+    @include bg-linear-gradient(360);
+    color: #f1f1f1;
+    border: none;
+    font-size: 1em;
+    padding: 15px $padX;
+
+}
+   

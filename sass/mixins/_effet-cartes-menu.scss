@@ -10,7 +10,7 @@
             transform: translateY(0px);
         }
     }
-/* boucle dans le nobre de carte pour ajouter du delay entre les apparations */
+/* boucle dans le nombre de cartes pour ajouter du delay entre les apparations */
     @for $i from 1 to $nbCartes {
         &--#{$i} {
             animation: translation-carte (0.3s + (0.3s *$i));

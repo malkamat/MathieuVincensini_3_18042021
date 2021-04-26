@@ -117,9 +117,9 @@ td, th {
 .info-explorer__bouton {
   background: linear-gradient(360deg, #9356DC, #FF79DA);
   color: #f1f1f1;
-  padding: 15px 30px;
   border: none;
   font-size: 1em;
+  padding: 15px 30px;
 }
 .info-fonctionnement {
   margin-bottom: 50px;
@@ -139,9 +139,9 @@ td, th {
 }
 .info-fonctionnement-liste {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  padding: 50px 0 0 100px;
+  padding: 20px 0 0 100px;
 }
 @media screen and (max-width: 900px) {
   .info-fonctionnement-liste {
@@ -154,7 +154,8 @@ td, th {
   }
 }
 .info-fonctionnement-liste-item {
-  padding-left: 50px;
+  padding-left: 150px;
+  width: 100%;
 }
 @media screen and (max-width: 900px) {
   .info-fonctionnement-liste-item {
@@ -168,10 +169,15 @@ td, th {
   }
 }
 .info-fonctionnement-liste-item__button {
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
   text-align: start;
   font-weight: bold;
   padding: 25px 80px;
   font-size: 0.9em;
+  width: 400px;
   /* tabeau d'icones */
 }
 .info-fonctionnement-liste-item__button--f3cd::before {
@@ -194,7 +200,6 @@ td, th {
 }
 @media screen and (max-width: 900px) {
   .info-fonctionnement-liste-item__button {
-    width: 70%;
     padding: 25px 60px;
   }
 }
@@ -298,7 +303,6 @@ td, th {
 }
 
 .image-top {
-  position: sticky;
   height: 60vh;
 }
 @media screen and (max-width: 900px) {
@@ -338,6 +342,9 @@ td, th {
 .carte-header__coeur {
   cursor: pointer;
   font-size: 1.5em;
+  width: 0;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 .carte-container {
   display: flex;
@@ -352,26 +359,33 @@ td, th {
     margin: auto;
   }
 }
+.carte-commander {
+  margin-top: 50px;
+}
+.carte-commander__button {
+  background: linear-gradient(360deg, #9356DC, #FF79DA);
+  color: #f1f1f1;
+  border: none;
+  font-size: 1em;
+  padding: 15px 40px;
+}
 
 /* article menu */
 .carte-article__titre {
   font-size: 1.3em;
   margin-bottom: 20px;
-  position: relative;
 }
 .carte-article__titre::after {
+  display: block;
   content: " ";
-  position: absolute;
+  position: relative;
   height: 3px;
-  top: 25px;
-  left: 0px;
   width: 40px;
-  border-bottom: 3px solid #99E2D0;
+  background: #99E2D0;
 }
 
 /* article menu liste des plats */
 .carte-article-liste__item {
-  width: 350px;
   height: 70px;
   display: flex;
   font-size: 0.9em;
@@ -380,7 +394,7 @@ td, th {
   background: white;
   box-shadow: 1px 1px 2px 2px #e4e4e4;
   /* keyframe de l'effet */
-  /* boucle dans le nobre de carte pour ajouter du delay entre les apparations */
+  /* boucle dans le nombre de cartes pour ajouter du delay entre les apparations */
 }
 @keyframes translation-carte {
   0% {
@@ -419,15 +433,33 @@ td, th {
 .carte-article-liste__item--9 {
   animation: translation-carte 3s;
 }
-.carte-article-liste__item:hover {
-  cursor: pointer;
+.carte-article-liste__item--10 {
+  animation: translation-carte 3.3s;
+}
+.carte-article-liste__item--larger {
+  height: 90px;
+}
+@media screen and (max-width: 1200px) {
+  .carte-article-liste__item {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carte-article-liste__item {
+    width: auto;
+  }
 }
 
 /* description et prix des cartes sur les menus */
 .carte-liste-item-info {
-  margin: 7px 0 0 8px;
-  width: 90%;
+  padding: 7px 0 0 8px;
+  width: 300px;
   min-width: 50%;
+}
+@media screen and (max-width: 1200px) {
+  .carte-liste-item-info {
+    width: 90%;
+  }
 }
 .carte-liste-item-info__titre {
   white-space: nowrap;
@@ -446,21 +478,70 @@ td, th {
 .carte-liste-item-info-prix {
   border-radius: 10px;
   background: white;
-  margin: 39px 20px 0 0px;
+  margin: 39px 20px 0 10px;
   font-size: 1.1em;
   text-align: end;
   width: 10%;
 }
-.info-fonctionnement-liste-item__numero, .header, .info, .carte-liste-item-info-check {
+.lds {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(236, 236, 236, 0.973);
+  z-index: 3;
+  animation: lds-fade 1.5s both;
+}
+
+.lds div {
+  height: 40px;
+  width: 16px;
+  animation: lds 0.9s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds div:nth-child(1) {
+  margin-right: 10px;
+  animation-delay: -0.24s;
+  background: #9356DC;
+}
+
+.lds div:nth-child(2) {
+  animation-delay: -0.12s;
+  margin-right: 10px;
+  background: #FF79DA;
+}
+
+.lds div:nth-child(3) {
+  background: #99E2D0;
+}
+
+@keyframes lds {
+  0% {
+    height: 54px;
+  }
+  100% {
+    height: 32px;
+  }
+}
+@keyframes lds-fade {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+    background: rgba(236, 236, 236, 0);
+  }
+}
+.info-fonctionnement-liste-item__numero, .header, .info, .carte-commander, .carte-liste-item-info-check, .lds {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.info-explorer__bouton, .info-fonctionnement-liste-item__button {
+.info-explorer__bouton, .carte-commander__button {
   border-radius: 90px;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .info-fonctionnement-liste-item__numero {
@@ -475,9 +556,9 @@ td, th {
   background-color: #9356DC;
 }
 
-.info-explorer__bouton:hover {
+.info-explorer__bouton:hover, .carte-commander__button:hover {
   opacity: 0.92;
-  box-shadow: 2px 2px 2px #b6b6b6;
+  box-shadow: 2px 2px #b6b6b6;
   transition: all 0.3s ease-in-out;
 }
 
@@ -523,6 +604,7 @@ td, th {
 }
 
 .carte-article-liste__item:hover {
+  cursor: pointer;
   /* keyframe de la translation de la div qui contient l'icone */
   /* animation pour le 3eme enfant de la div qui correspond à l'icone*/
 }
@@ -531,7 +613,7 @@ td, th {
     width: 0;
   }
   100% {
-    width: 40%;
+    width: 30%;
   }
   /* keyframe de la rotation de l'icone */
 }

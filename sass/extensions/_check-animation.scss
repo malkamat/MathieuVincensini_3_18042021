@@ -1,11 +1,12 @@
 %check-animation {
+    cursor: pointer;
 /* keyframe de la translation de la div qui contient l'icone */
     @keyframes translation-check {
         0% {
             width: 0;
         }
         100% {
-            width: 40%;  
+            width: 30%;  
         }
  /* keyframe de la rotation de l'icone */
     }
