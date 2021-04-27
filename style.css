@@ -339,6 +339,11 @@ td, th {
   font-family: 'Shrikhand', cursive;
   font-size: 2em;
 }
+@media screen and (max-width: 500px) {
+  .carte-header__titre {
+    font-size: 1.7em;
+  }
+}
 .carte-header__coeur {
   cursor: pointer;
   font-size: 1.5em;
