@@ -271,6 +271,14 @@ td, th {
   left: 90%;
   font-size: 1.3em;
 }
+.restaurants-grille-carte-info__nouveau {
+  position: relative;
+  top: -330px;
+  left: 190px;
+  background: #99E2D0;
+  color: #139273;
+  padding: 5px 10px;
+}
 
 /* footer */
 .footer {

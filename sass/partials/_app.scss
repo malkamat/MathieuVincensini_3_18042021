@@ -212,6 +212,7 @@
             box-shadow: 1px -1px 2px 2px rgb(228, 228, 228);
             cursor: pointer;
 
+        
 
             &__image {
                 height: 300px;
@@ -241,8 +242,15 @@
                     top: -28px;
                     left: 90%;
                     font-size: 1.3em;
+                }
 
-
+                &__nouveau {
+                    position: relative;
+                    top: -330px;
+                    left: 190px;
+                    background: #99E2D0;
+                    color: #139273;                    ;
+                    padding: 5px 10px;
                 }
             }
         }
