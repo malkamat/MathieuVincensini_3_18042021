@@ -141,7 +141,10 @@
                     padding: 25px 80px;
                     font-size: 0.9em;
                     width: 400px;
+                    background: #f6f6f6;
+                    @extend %effet-boutons-principaux;
 
+                
                     /* tabeau d'icones */
                     $icons: f3cd, f0ca, f54e;
 
@@ -154,6 +157,13 @@
                                 position: relative;
                                 left: -20px;
                             }
+                        }
+                    }
+                    &:hover {
+                        background: #f5edff;
+
+                        &::before {
+                            color: $couleur-primaire;
                         }
                     }
 

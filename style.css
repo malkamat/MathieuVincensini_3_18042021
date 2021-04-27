@@ -178,6 +178,7 @@ td, th {
   padding: 25px 80px;
   font-size: 0.9em;
   width: 400px;
+  background: #f6f6f6;
   /* tabeau d'icones */
 }
 .info-fonctionnement-liste-item__button--f3cd::before {
@@ -197,6 +198,12 @@ td, th {
   font-family: "Font Awesome 5 Free";
   position: relative;
   left: -20px;
+}
+.info-fonctionnement-liste-item__button:hover {
+  background: #f5edff;
+}
+.info-fonctionnement-liste-item__button:hover::before {
+  color: #9356DC;
 }
 @media screen and (max-width: 900px) {
   .info-fonctionnement-liste-item__button {
@@ -581,7 +588,7 @@ td, th {
   background-color: #9356DC;
 }
 
-.info-explorer__bouton:hover, .carte-commander__button:hover {
+.info-explorer__bouton:hover, .info-fonctionnement-liste-item__button:hover, .carte-commander__button:hover {
   opacity: 0.92;
   box-shadow: 2px 2px #b6b6b6;
   transition: all 0.3s ease-in-out;
