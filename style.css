@@ -278,6 +278,18 @@ td, th {
   background: #99E2D0;
   color: #139273;
   padding: 5px 10px;
+  font-size: 0.9em;
+}
+@media screen and (max-width: 550px) {
+  .restaurants-grille-carte-info__nouveau {
+    left: 70%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .restaurants-grille-carte-info__nouveau {
+    top: -315%;
+    left: 63%;
+  }
 }
 
 /* footer */
