@@ -619,7 +619,6 @@ td, th {
   left: 0;
   top: 0;
   visibility: visible;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
